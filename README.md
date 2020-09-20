@@ -1,5 +1,4 @@
-# BiofilmQ
-BiofilmQ: a software tool for quantitative image analysis of microbial biofilm communities
+# BiofilmQ: a software tool for quantitative image analysis of microbial biofilm communities
 
 On this GitHub page you can download the BiofilmQ software. 
 
