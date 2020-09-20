@@ -1,4 +1,4 @@
-# BiofilmQ: software tool for image analysis of microbial biofilm communities
+# BiofilmQ v0.2.1: software tool for image analysis of microbial biofilm communities
 
 On this GitHub page you can download the BiofilmQ software:
 - BiofilmQ.zip (recommended, requires Matlab license, runs on Win10, MacOS, Linux)
