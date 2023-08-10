@@ -1,0 +1,29 @@
+{% extends "!layout.html" %}
+
+
+
+{% block extrahead %}
+<link rel="icon" href="_images/icon.png">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119674707-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-119674707-2');
+</script> 
+
+{% endblock %}
+
+{% block footer %}
+
+{{ super() }}
+
+<a href="https://drescherlab.org/disclaimer.html" style='float: right; font-size: 13px'>Imprint</a>
+
+
+
+
+{% endblock %} 

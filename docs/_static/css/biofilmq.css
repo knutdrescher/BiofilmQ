@@ -1,0 +1,52 @@
+div.related ul {
+	background-color: #93406b;
+}
+
+div.footer a {
+	color: #93406b;
+}
+
+a:hover {
+	color: #93406b;
+}
+
+a {
+	color: #93406b;
+}
+
+th {
+    background-color: #93406b;
+}
+
+div.footer {
+	color: #93406b;
+}
+
+div.sphinxsidebar h3,
+div.shpinxsidebar h4 {
+	border: 1px solid #93406b;
+	background-color: #93406b
+}
+
+h1, h2, h3 {
+	color: #93406b;
+}
+
+h2 {
+	border-bottom: 1px solid #93406b;
+}
+
+div.sphinxsidebar h3, div.sphinxsidebar h4 {
+    background-color: #93406b;
+
+}
+
+.guilabel {
+	border:1px solid #cccccc;
+	background:#eeeeee;
+	font-size:80%;
+	font-weight:700;
+	border-radius:4px;
+	padding:2.4px 6px;
+	margin:auto 2px
+}
