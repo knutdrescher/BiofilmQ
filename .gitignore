@@ -45,8 +45,8 @@ inculdes/tools/folderNavigator/directory.mat
 includes/temp
 
 # documentation build
-doc/build
-doc/_build
+docs/build
+docs/_build
 
 # build folder
 deployment/BiofilmQ
