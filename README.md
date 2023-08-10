@@ -1,3 +1,5 @@
+[![Documentation Status](https://readthedocs.org/projects/biofilmq/badge/?version=latest)](https://biofilmq.readthedocs.io/en/latest/?badge=latest)
+
 # BiofilmQ: image analysis of microbial biofilm communities
 
 Current release: BiofilmQ v0.2.1 (20 Sept 2020). 
