@@ -1,0 +1,17 @@
+name: Bug Report
+description: File a bug report, for questions and help see link below.
+assignees:
+  - gatoniel
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for opening a bug report for BiofilmQ.
+
+        If you have a question or need help, please go to [our forum](https://forum.image.sc/tag/biofilmq)
+
+        Please DO NOT use this template to ask questions. There are other appropriate channels to ask questions. This template is strictly for reporting bugs.
+  - type: textarea
+    attributes:
+      label: "Your bug report"
+      description: "Please provide us with as much details as possible."
