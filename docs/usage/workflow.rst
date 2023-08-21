@@ -17,11 +17,11 @@ BiofilmQ. **b**, First, images have to be imported; a wide range of formats are 
 pre-processing steps including image time series registration, filtering for noise reduction,
 and colony separation can be performed to improve the segmentation results. d, Biomass must be
 distinguished from background (segmentation), which can be performed automatically using
-different thresholding algorithms, or semi-manually, or by importing a segmented binary image
-from other image analysis tools. After the segmentation of the biofilm volume, the biofilm
-can be dissected into cubes of a user-defined size, or a single-cell segmentation can be
-imported. **e**, Quantitative characterization of the biofilm is achieved via the parameter
-calculation for the biofilm as a whole, and for each cube in the biofilm. **f**, Parameter
+different thresholding algorithms, semi-manually, or by importing a segmentation represented by a label image
+from other image analysis tools. After manual or semi-manual segmentation of the biofilm volume, the biofilm
+can be dissected into cubes of a user-defined size.
+**e**, Quantitative characterization of the biofilm is achieved via the parameter
+calculation for the biofilm as a whole, and for each cube (or each cell) in the biofilm. **f**, Parameter
 quantifications and biofilm structural analysis can be exported either as spreadsheets,
 flow-cytometry data format, graphs, or as input data for a 3D rendering software. **g**, The
 extensive data visualization capabilities that are built into BiofilmQ are described in the section :ref:`data-visualization`. Figure adapted from [`1 <https://doi.org/10.1101/735423>`_] . 

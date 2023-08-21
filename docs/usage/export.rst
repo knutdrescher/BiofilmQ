@@ -37,7 +37,7 @@ Flow Cytometry (FCS) files
 -----------------------------
 
 The Flow Cytometry Standard (FCS) is a `standardized <https://onlinelibrary.wiley.com/doi/full/10.1002/cyto.a.20825>`_ file
-format for flow cytometry data. If you assume that all cubes in your segmentation are *pseudo-cells*, and if each calculated cube parameter is interpreted as a *pseudo-cell* cytometry parameter, 
+format for flow cytometry data. If you assume that all objects in your segmentation are *(pseudo-)cells*, and if each calculated object parameter is interpreted as a *(pseudo-)cell* cytometry parameter, 
 you can create flow-cytometry-like datasets with BiofilmQ. All calculated properties can be visualized with a FCS-capable plotting program (e.g. FlowJo or many others).
 
 .. warning::
@@ -51,7 +51,7 @@ you can create flow-cytometry-like datasets with BiofilmQ. All calculated proper
 Spreadsheet CSV-files
 ------------------------------
 
-You can export all cube properties as well as the global biofilm parameters for every frame to CSV-files. This is a text-file format
+You can export all object properties as well as the global biofilm parameters for every frame to CSV-files. This is a text-file format
 which can be easily imported into a spreadsheet application of your choice (e.g. Microsoft Excel). If your data contains a time series, 
 for each frame of the time series, the export function saves a separate file in the subfolder '/data/txt_output' inside your experiment folder.
 

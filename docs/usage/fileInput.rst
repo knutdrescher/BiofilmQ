@@ -45,7 +45,7 @@ Quick Start
 * By using the :guilabel:`Import files` button you can import your files into BiofilmQ's own TIF format (:ref:`file-import-in-detail`). In most advanced microscope programs, you have the option to image multiple positions in one run. If you want to analyse each position individually, you can use the checkbox :guilabel:`Generate one experiment folder per position during export`. Each position can include a time series.
 * If you used multiple fluorescence channels during the image acquisition, a pop-up will ask you to select the channel that contains the primary (e.g. constitutive) signal, on which the biofilm segmentation will be based. You can change the selection later if needed.
 * If you created new directories for different biofilms in your images, at the end of the import process a pop-up window appears which asks you whether you want to switch to the first newly created directory.
-* You can now proceed with the :ref:`image_alignment` (recommended for time series) or with the :ref:`segmentation`.
+* You can now proceed with the :ref:`image_alignment` (recommended for time series), with the :ref:`segmentation`, or with the :ref:`segmentation_import`.
 
 .. note:: In order to calculate biofilm properties with the correct dimensions, you must modify the values for *dxy* and *dz* scaling in the :guilabel:`Image preview` panel according to your imaging settings. Use the :guilabel:`Update all images` button to apply the settings to all images in the current folder.
 

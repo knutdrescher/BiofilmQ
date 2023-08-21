@@ -69,7 +69,7 @@ System Requirements
      - We use 4K screens
      - 1600px x 1200px
    * - **Operating system**
-     - Windows 7 or Windows 10
+     - Windows 7, Windows 10, Windows 11
      - Windows 7, 10, Linux, MacOSX
    * - **Hard drive**
      - Depends on your image sizes. We typically use an SSD drive for fast data access.

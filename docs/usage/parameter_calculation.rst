@@ -9,20 +9,22 @@ Parameter Calculation
 
 
 In the tab :guilabel:`Parameter calculation` you can compute additional measurements or features which can be extracted from image stacks
-for the whole biovolume, or for each pseudo-cell cube in the biovolume.
+for the whole biovolume, or for each pseudo-cell cube (or each single cell) in the biovolume.
 
 .. note::
 	
-	The `segmentation <./segmentation.html>`_ extracts the following parameters for each pseudo-cell cube (also called "object" below) by default:
+	We use the term "object" to refer to a pseudo-cell cube or a single cell. The segmentation extracts the following parameters for each object by default:
 
 	* **CentroidCoordinate_{x, y, z}**.  Center coordinate in :math:`x, y, z` direction.
 	* **Shape_Volume**.  Volume in :math:`\mu m^3`.
 	* **Intensity_Mean**.  (Option: fluorescence channel on which the segmentation is based) 	Mean of all fluorescent intensity values.
+	* **ID**.  Unique object ID.
+
+    * The following properties are calculated only in case of cubed segmentation.
 	* **Cube_VolumeFraction**.  Ratio of occupied biovolume of the cube compared to the total cube volume.	
 	* **Cube_Surface**.  Number of interface voxels between occupied and unoccupied volume in cube.
 	* **Cube_CenterCoord**.  This is an internal property only. Center coordinate of cube.
 	* **Grid_ID**.  Unique ID of grid position within the given volume (depends only on x, y, and z). Two cubes of different z-stacks at the same position will have the same Grid_ID.
-	* **ID**.  Unique object ID.
 
 By selecting a row in the parameter calculation table, you toggle a description panel underneath the table. In this description, you will find brief information on the calculation process, 
 the added features and if particular preprocessing steps are required.
@@ -58,7 +60,7 @@ Filter objects
 Exclude objects from further calculations which are outside
 the specified range of a given parameter (e.g. to exclude very small objects, or objects at a particular location).
 
-Of course, the objects can only be filtered accordinig to parameters that have already been calculated at this stage of in the processing pipeline.
+Of course, the objects can only be filtered according to parameters that have already been calculated at this stage of in the processing pipeline.
 So you may have to run the parameter 
 calculation at least twice. Each filter range is defined on a per-file basis. Use the button :guilabel:`Determine` for a graphical range selection. Use the button :guilabel:`Set for all` if you want to 
 use the same range on all files in the *Files* panel. After filtering, objects outside the parameter range are excluded from further analysis, but are not permanently deleted. To undo a filtering operation simply filter again with a data range including all objects. 
@@ -86,7 +88,7 @@ One (or multiple comma-separated) parameters can be defined in the :guilabel:`Op
 
 
 Object parameters
-----------------------
+=================
 
 In this section we will discuss all available object parameter calculation tasks. Parameters starting with *Biofilm_* are global parameters and are calculated for the whole 
 biofilm once. All other parameters are calculated for each object separately.
@@ -98,12 +100,16 @@ To keep track of these parameters, each one is appended to the parameter name fo
 the visualization or data export. For example the note *"Option: channel"* for the parameter *Intensity_Mean* leads to a parameter name *Intensity_Mean_chX*
 where *X* is replaced by the picked channel number for the calculation.
 
+Properties for cubed segmentation only
+--------------------------------------
 
+.. note::
+   There are properties which are applicable only for cubed segmentation or only for single-cell segmentation, which are marked accordingly. All other properties can be calculated with either single-cell or cubed segmentation.
 
 Surface properties
 ~~~~~~~~~~~~~~~~~~~~
 
-
+These "Surface properties" parameters only work for biofilms that have been dissected into cubes.
 
 All objects with the same :math:`x,y` center coordinates are grouped to a 'pillar'. For each 'pillar' the surface is calculated.
 
@@ -122,10 +128,9 @@ The option *range* (in :math:`\mu m`) defines the radius of a sphere around the 
 
 * **Biofilm_OuterSurface**.  (global) is the sum of all pillar surfaces (including holes).
 
-.. note::
-    
-    These "Surface properties" parameters only work for biofilms that have been dissected into cubes.
 
+Properties for all segmentations
+--------------------------------
 
 Substrate area
 ~~~~~~~~~~~~~~~
@@ -187,11 +192,6 @@ Convexity
 
 * **Shape_Convexity**.  Volume of convex hull of each object divided by  the biovolume of each object. This parameter is calculated for each pseudo-cell cube of the biofilm.
 
-.. note::
-    This property is also available for single cell segmentation.
-
-
-
 Distance to center of biofilm
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -200,9 +200,6 @@ Calculates the center of the whole biofilm biovolume by taking the mean value ov
 * **Distance_ToBiofilmCenter**.  Distance of each object *CentroidCoordinate* to the center of the biofilm in :math:`\mu m`.
 
 * **Distance_ToBiofilmCenterAtSubstrate**.  Same as *Distance_ToBiofilmCenter* but uses the minimal value in :math:`z` of the whole biofilm instead of the mean. This is the distance of each object to the center of the biofilm projected down to the substrate plane.
-
-.. note::
-    This property is also available for single cell segmentation.
 
 .. _distance_to_surface:
 
@@ -215,11 +212,6 @@ is used as a :math:`z` coordinate for the convex hull.
 
 * **Distance_ToSurface**.  (Option: *resolution*) Distance between cube object centroid to the outer convex hull. 
 
-.. note::
-    This property is also available for single cell segmentation.
-
-
-
 Distance to specific object
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -231,10 +223,6 @@ The option *ID* indicates the object of interest, to which the distance of all o
 
  To figure out the ID of a certain object visualize the biofilm in ParaView and color the objects by their ID.
 
-.. note::
-    This property is also available for single cell segmentation.
- 
-
 
 Local density
 ~~~~~~~~~~~~~~~~
@@ -244,9 +232,6 @@ To compute measures of the local density, BiofilmQ calculates a sphere with radi
 * **Architecture_LocalNumberDensity**.  (Option: *range*) Number of other object *CentroidCoordinates* within the sphere.
 
 * **Architecture_LocalDensity**.  (Option: *range*) Occupied volume fraction in the sphere (results in NaN if calculation is not possible).
-
-.. note::
-    This property is also available for single cell segmentation.
 
 Properties for single-cell segmentation
 ---------------------------------------
@@ -301,14 +286,12 @@ Fluorescence properties
 
 
 This module applies again all filters used for the :ref:`segmentation` on the raw image stacks (noise removal is optional).
+If a segmentation was imported, filters can nevertheless be set to remove noise when applying this module.
 Based on the filtered/ cropped/ isotropical-pixel-spacing-transformed images the user can calculate the fluorescence
 properties listed below. The properties can be categorized into two major categories:
 
 * :ref:`intensity_properties`
 * :ref:`correlation_properties`
-
-..
-    * :ref:`haralick_features`
 
 Use the :guilabel:`Options` panel to create a custom processing pipeline by adding desired calculation tasks. You can find each calculation task in the
 drop-down menu on the right. As soon as you have selected a task, you can modify the task-related options via the interface elements below.
@@ -328,7 +311,7 @@ with constitutive signals.
 
 With the shell-related parameters, the fluorescence signal inside a shell around each object can be quantified.
 The shell is constructed by expanding each object by a layer of thickness *range*. Then the average or integrated intensity of all voxels inside this shell is 
-calculated. For cubed biofilms inter-cube faces are not considered for the shell calculation.
+calculated. For cubed biofilms inter-cube faces are not considered for the shell calculation, for single-cell segmentations, pixels belonging to other objects are excluded from the shell.
 These shell-related parameters are particularly useful for quantifying the signal of extra-cellular components
 labeled with fluorescent dyes.
 
@@ -459,7 +442,7 @@ Some fluorescence correlation properties can be calculated for every single obje
 Tag cells
 ------------------------
 Sometimes (especially for the analysis or visualization of the experiment) it becomes useful to tag a subset
-of the observed cube objects based on the already calculated parameters. In contrast to *filter objects*, this
+of the observed objects based on the already calculated parameters. In contrast to *filter objects*, this
 function will add a new parameter for each new tag. All objects are still processed by the other parameter calculations in the same way.
 
 * **<user_defined_name>**.  (requires: parameter for tagging, rules) stores for each object the value 1 (true) if all filter rules are fulfilled otherwise it stores 0 (false)

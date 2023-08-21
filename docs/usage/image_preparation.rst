@@ -104,7 +104,7 @@ Image alignment
 
 If you have captured multiple images in a time series, you probably noticed that your samples
 can drift over time in :math:`x` and :math:`y``-direction. If you want to compare spatial
-information (like biofilm positions or pseudo-cell cube position) or track segmented objects,
+information (like biofilm positions, pseudo-cell cube position or single-cell position) or track segmented objects,
 you have to correct the sample drift before you segment your images.
 
 For this purpose we have included the :guilabel:`Image alignment` tab in BiofilmQ.
@@ -125,4 +125,4 @@ For well-focused images the correlation-based approach is very robust even for l
 
 If you captured 3D image stack time series, you probably also experience a drift in the :math:`z` direction. You can use the checkbox :guilabel:`Align also along z`, to minimize this drift as well. This function exclusively uses the correlation-based approach mentioned above.
 
-After the image alignment you can proceed with the :ref:`segmentation` of your input data.
+After the image alignment you can proceed with the :ref:`segmentation` of your input data, or with importing a single-cell segmentation.
