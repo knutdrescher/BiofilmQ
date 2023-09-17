@@ -1,6 +1,7 @@
 % Copyright (c) 2016-2019 by Raimo Hartmann
-% Copyright (c) 2018-2020 by Hannah Jeckel
-% Copyright (c) 2018-2020 by Eric Jelli
+% Copyright (c) 2018-2023 by Hannah Jeckel
+% Copyright (c) 2018-2021 by Eric Jelli
+% Copyright (c) 2022-2023 by Niklas Netter
 % Max-Planck Institute for terrestrial Microbiology, Marburg
 % Philipps-University, Marburg
 
@@ -104,8 +105,9 @@ version = versions{1}{1};
 
 fprintf('=== BiofilmQ - The Biofilm Segmentation Toolbox (%s) ===\n', version)
 fprintf('Copyright (c) 2016-2019 by Raimo Hartmann\n');
-fprintf('Copyright (c) 2018-2020 by Hannah Jeckel\n');
-fprintf('Copyright (c) 2018-2020 by Eric Jelli\n');
+fprintf('Copyright (c) 2018-2023 by Hannah Jeckel\n');
+fprintf('Copyright (c) 2018-2021 by Eric Jelli\n');
+fprintf('Copyright (c) 2022-2023 by Niklas Netter\n');
 fprintf('Loading... ');
 
 % Choose default command line output for BiofilmQ
