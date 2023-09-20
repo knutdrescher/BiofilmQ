@@ -1,4 +1,4 @@
-function imgfilter = registerAndCropImage(imgfilter, params, metadata)
+function imgfilter = registerAndCropImage(imgfilter, params, method, metadata)
 
 
 % Image registration
@@ -11,8 +11,8 @@ if params.imageRegistration
         end
     catch
         disp(['Image is not registered!']);
-        uiwait(msgbox(' - WARNING: Image is not registered! Cannot continue.', 'Error', 'error', 'modal'));
-        displayStatus(handles, 'Processing cancelled!', 'red');
+        uiwait(msgbox(' - WARNING: Image is not registered! Please uncheck "Apply registration" in "2.1 Cropping" or register images before continuing.', 'Error', 'error', 'modal'));
+        imgfilter = [];
         return;
     end
 end

@@ -2808,12 +2808,21 @@ if checkCancelButton(handles)
     return;
 end
 
+isLabelImage = strcmp(handles.uicontrols.popupmenu.segmentationMethod.String(params.segmentationMethod), "Label image") || (params.channel~=params.popupmenu_labelImage_Channel);
+
+if ~isLabelImage
+    method = 'linear'; 
+else
+    method = 'nearest';
+end
+
 updateWaitbar(handles, 0.4)
-img1raw = registerAndCropImage(img1raw, params, metadata_seg);
+img1raw = registerAndCropImage(img1raw, params, method, metadata_seg);
 
 
-if checkCancelButton(handles)
+if checkCancelButton(handles) || isempty(img1raw)
     toggleBusyPointer(handles, false)
+    updateWaitbar(handles, 0)
     return;
 end
 
@@ -2876,7 +2885,7 @@ params.svd = 0;
 displayStatus(handles, 'Processing image', 'black');
 
 
-if ~strcmp(handles.uicontrols.popupmenu.segmentationMethod.String(params.segmentationMethod), "Label image") || (params.channel~=params.popupmenu_labelImage_Channel)
+if ~isLabelImage
     [imgfilter, params] = resizingAndDenoising(double(img1raw), metadata_raw, params);
 else
     imgfilter = zInterpolation_nearest(double(img1raw), metadata_raw.data.scaling.dxy, metadata_raw.data.scaling.dz, params);
@@ -4108,7 +4117,14 @@ if isfield(params, 'invertStack')
     end
 end
 
-imgfilter = registerAndCropImage(imgfilter, params, metadata);
+imgfilter = registerAndCropImage(imgfilter, params, 'linear', metadata);
+
+if checkCancelButton(handles) || isempty(imgfilter)
+    toggleBusyPointer(handles, false)
+    updateWaitbar(handles, 0);
+    set(handles.uicontrols.pushbutton.pushbutton_determineManualThreshold, 'String', 'Open ortho view of selected image stack for threshold determination');
+    return;
+end
 
 params.thresholdSensitity = str2double(handles.uicontrols.edit.thresholdSensitivity.String);
 
