@@ -47,7 +47,7 @@ Downloads
 
 \ :sup:`2` does **not** require MATLAB licence
 
-We recommend the BiofilmQ.zip-based installation for users that have a MATLAB installation with the appropriate toolboxes listed above.
+We recommend the BiofilmQ.zip-based installation for users that have a MATLAB installation with the appropriate toolboxes listed above. For older versions see the `list of releases <https://github.com/knutdrescher/BiofilmQ/releases>`_.
 
 System Requirements
 =====================
