@@ -35,7 +35,7 @@ if numel(range) ~= numel(str2num(range_new))
     warning('on','backtrace')
 end
 range = str2num(range_new);
-
+globalParamsCsv = {};
 
 for f = range
     % Select row in file table
@@ -72,7 +72,17 @@ for f = range
         case 'fcs'
             handles = exportFCS(handles, objects, params, custom_fields_objects, filename);
         case 'csv'
-            objects = writeCSV(handles, objects, custom_fields_objects, params, filename);
+            [~, globalParamsCsvTemp] = writeCSV(handles, objects, custom_fields_objects, params, filename);
+            if ~isempty(globalParamsCsv)
+                if size(globalParamsCsvTemp, 2) < size(globalParamsCsv, 2)
+                    paddingCell = cell(size(globalParamsCsvTemp, 1), size(globalParamsCsv, 2) - size(globalParamsCsvTemp, 2));
+                    globalParamsCsvTemp = [globalParamsCsvTemp paddingCell];
+                elseif size(globalParamsCsvTemp, 2) > size(globalParamsCsv, 2)
+                    paddingCell = cell(size(globalParamsCsv, 1), size(globalParamsCsvTemp, 2) - size(globalParamsCsv, 2));
+                    globalParamsCsv = [globalParamsCsv paddingCell];
+                end     
+            end
+            globalParamsCsv = [globalParamsCsv; globalParamsCsvTemp];
     end
     
     displayStatus(handles, 'Done', 'blue', 'add');
@@ -82,6 +92,16 @@ for f = range
     
     if checkCancelButton(handles)
         return;
+    end
+end
+
+if strcmpi(type, 'csv')
+    filename_save = fullfile(handles.settings.directory, 'data', 'txt_output', ['Summary_global_variables_files_', num2str(min(range)), '_to_', num2str(max(range)), '.csv']);
+    fprintf('    - writing "%s"\n', filename_save)
+    try
+        cell2csv(filename_save, globalParamsCsv)
+    catch
+        uiwait(msgbox(sprintf('Cannot write file "%s"! Is the file already in use?',filename_save), 'Error', 'error', 'modal'));
     end
 end
 

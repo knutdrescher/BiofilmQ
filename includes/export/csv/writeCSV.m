@@ -1,4 +1,4 @@
-function objects = writeCSV(handles, objects, custom_fields_objects, params, filename)
+function [objects, globalParamsCsv] = writeCSV(handles, objects, custom_fields_objects, params, filename)
 folder = fullfile(handles.settings.directory, 'data', 'txt_output');
 if ~exist(folder, 'dir')
     mkdir(folder);
@@ -48,13 +48,10 @@ if isfield(objects, 'globalMeasurements')
     header1(badFields+2) = [];
     header2(badFields+2) = []; 
     
-    filename_save = fullfile(handles.settings.directory, 'data', 'txt_output', [filename(1:end-4), '_global.csv']);
-    fprintf('    - writing "%s"\n', filename_save);
-    try
-        cell2csv(filename_save, [header1; header2; data])
-    catch
-        uiwait(msgbox(sprintf('Cannot write file "%s"! Is the file already in use?',filename), 'Error', 'error', 'modal'));
-    end
+    [spacer, header0] = deal(cell(size(header1)));
+    header0(1) = {filename(1:end-4)};
+
+    globalParamsCsv = [header0; header1; header2; data; spacer];
 end
 
 %% Store per object data
