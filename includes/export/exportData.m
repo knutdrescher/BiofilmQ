@@ -36,6 +36,7 @@ if numel(range) ~= numel(str2num(range_new))
 end
 range = str2num(range_new);
 globalParamsCsv = {};
+globalParamsNames = {'Filename'};
 
 for f = range
     % Select row in file table
@@ -73,16 +74,26 @@ for f = range
             handles = exportFCS(handles, objects, params, custom_fields_objects, filename);
         case 'csv'
             [~, globalParamsCsvTemp] = writeCSV(handles, objects, custom_fields_objects, params, filename);
-            if ~isempty(globalParamsCsv)
-                if size(globalParamsCsvTemp, 2) < size(globalParamsCsv, 2)
-                    paddingCell = cell(size(globalParamsCsvTemp, 1), size(globalParamsCsv, 2) - size(globalParamsCsvTemp, 2));
-                    globalParamsCsvTemp = [globalParamsCsvTemp paddingCell];
-                elseif size(globalParamsCsvTemp, 2) > size(globalParamsCsv, 2)
-                    paddingCell = cell(size(globalParamsCsv, 1), size(globalParamsCsvTemp, 2) - size(globalParamsCsv, 2));
-                    globalParamsCsv = [globalParamsCsv paddingCell];
-                end     
+            if ~isempty(globalParamsCsvTemp)
+                globalParamsNamesTemp = globalParamsCsvTemp(2,:);
+                globalParamsNames_new = unique([globalParamsNames, globalParamsNamesTemp], 'stable');
+                globalParamsCsv_new = globalParamsNames_new;
+    
+                if ~isempty(globalParamsCsv)
+                    inds_old = cellfun(@(x) find(cellfun(@(y) strcmp(x,y), globalParamsNames)), globalParamsNames_new, 'UniformOutput',false);
+                    notFound = cellfun(@isempty, inds_old);
+                    globalParamsCsv_new(2,~notFound)= globalParamsCsv(2,cell2mat(inds_old(~notFound)));
+                    globalParamsCsv_new(3:size(globalParamsCsv,1), ~notFound) = globalParamsCsv(3:end,cell2mat(inds_old(~notFound)));
+                end
+                inds_new = cellfun(@(x) find(cellfun(@(y) strcmp(x,y), globalParamsNamesTemp)), globalParamsNames_new, 'UniformOutput',false);
+                notFound = cellfun(@isempty, inds_new);
+                globalParamsCsv_new(2,~notFound)= globalParamsCsvTemp(3,cell2mat(inds_new(~notFound)));
+                globalParamsCsv_new(end+1,1) = globalParamsCsvTemp(1,1);
+                globalParamsCsv_new(end, ~notFound) = globalParamsCsvTemp(4,cell2mat(inds_new(~notFound)));
+    
+                globalParamsCsv = globalParamsCsv_new;
+                globalParamsNames = globalParamsNames_new;
             end
-            globalParamsCsv = [globalParamsCsv; globalParamsCsvTemp];
     end
     
     displayStatus(handles, 'Done', 'blue', 'add');
