@@ -52,6 +52,8 @@ if isfield(objects, 'globalMeasurements')
     header0(1) = {filename(1:end-4)};
 
     globalParamsCsv = [header0; header1; header2; data; spacer];
+else
+    globalParamsCsv = [];
 end
 
 %% Store per object data
