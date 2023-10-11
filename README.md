@@ -4,7 +4,8 @@
 # BiofilmQ: image analysis of microbial biofilm communities
 
 Current release: BiofilmQ v1.0.0 (11 Oct 2023). 
-[BiofilmQ paper: Quantitative image analysis of microbial communities with BiofilmQ](https://doi.org/10.1038/s41564-020-00817-4)
+
+Link to BiofilmQ paper: [Quantitative image analysis of microbial communities with BiofilmQ](https://doi.org/10.1038/s41564-020-00817-4).
 
 The documentation for how to use & install can be found here: https://biofilmq.readthedocs.io/en/latest/?badge=latest
 
