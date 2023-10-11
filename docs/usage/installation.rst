@@ -32,7 +32,7 @@ Downloads
      - 62 Mb
      - Windows 10
      - **Internet connection required** for MCR download.
-   * - `BiofilmQ_MCR-installer-v1.0.0.zip <https://github.com/knutdrescher/BiofilmQ/releases/download/v1.0.0/BiofilmQ_MCR-installer-v1.0.0.zip>`_ (without MATLAB\ :sup:`2`)
+   * - `BiofilmQ_MCR-installer-v1.0.0.zip <https://drescherlab.org/data/biofilmQ/BiofilmQ_MCR-installer-v1.0.0.zip>`_ (without MATLAB\ :sup:`2`)
      - v1.0.0
      - 2.31 GB
      - Windows 10
