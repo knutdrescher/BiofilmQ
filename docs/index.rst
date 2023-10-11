@@ -16,21 +16,27 @@ BiofilmQ is based on a graphical user interface and does not require programming
 
 BiofilmQ has two approaches for quantifying biofilm properties in space and time:
 
-**Option 1:** If your image resolution is not sufficient to detect individual cells, or if the properties you are interested in do not require single cell detection, BiofilmQ offers the following segmentation approach:
-BiofilmQ can detect the 3D biofilm biovolume and divide it into cubic *pseudo-cells*.
-Each cube is then treated as a single pseudo-cell for analysis purposes, for which fluorescence, architectural, spatial, and many more properties are measured. 
-By using this cube-based approach, it is possible to analyze the biofilm-internal structure, by performing biofilm image cytometry (analogious to flow cytometry, but with 
-spatial features), based on the quantification of many parameters for pseudo-cells.
+.. _stardistopp: https://github.com/gatoniel/merge-stardist-masks
+.. |stardistopp| replace:: **StarDist OPP**
 
-**Option 2:** If your image resolution is sufficient to detect individual cells, and you would like to analyze single-cell properties, BiofilmQ offers the following approach:
-You need to perform the image segmentation to detect the single cells outside of BiofilmQ, e.g., using our `StarDist OPP <https://github.com/gatoniel/merge-stardist-masks>`_ tool, and then import the segmentation result into BiofilmQ.
-BiofilmQ then performs the analyses and parameter quantifications based on the imported single-cell segmentation. (Option 2 was added in the 2023 release of BiofilmQ version 1.0.0).
+- **Case 1: The properties you are interested in do not require single cell detection or your image resolution is not sufficient to detect individual cells.**
+ 
+  In this case, you can use the cube-based segmentation of BiofilmQ, during which
+  the 3D biofilm biovolume is detected via thresholding and divided it into cubic *pseudo-cells*.
+  Each cube is then treated as a single pseudo-cell for analysis purposes, for which fluorescence, architectural, spatial, and many more properties are measured. 
+  Using this cube-based approach, it is possible to analyze the biofilm-internal structure, by performing biofilm image cytometry (analogous to flow cytometry, but with 
+  spatial features), based on the quantification of many parameters for pseudo-cells.
 
-BiofilmQ provides a powerful analysis and plotting functionality for presenting the data from each pseudo-cell cube or each cell (depending on whether Option 1 or Option 2 descibed above as used). 
-It is possible, e.g. to generate biofilm kymographs, demographs, and to  generate flow-cytometry-like
+- **Case 2: You already have a single-cell segmentation from another tool (e.g. our** |stardistopp|_ **tool) and would like to analyze single-cell data based on this segmentation.**
+  
+  In this case, you can import your segmentation into BiofilmQ using the label image approach. All subsequent analysis (parameter calculation, visualization, ...) can then be performed as usual based on the imported segmentation.
+  This option was added in the 2023 release of BiofilmQ version 1.0.0 and is **the only way to analyze single-cell properties**.
+
+BiofilmQ provides powerful analysis and plotting functionality for quantifying and presenting the data from each pseudo-cell cube or each cell (depending on which of the use cases descibed above are used). 
+For example, it is possible to generate biofilm kymographs, demographs, and to  generate flow-cytometry-like
 datasets, including population gating, which include not just fluorescence and structural properties of cells, but also spatial properties  within the biofilm.
 
-The easy-to-use analysis and visualization features enable you to generate high-quality data
+The easy-to-use analysis and visualization features of BiofilmQ enable you to generate high-quality data
 figures without any programming skills.
 
 For advanced users with programming expertise, all features are fully scriptable (in MATLAB) for batch processing of large datasets.

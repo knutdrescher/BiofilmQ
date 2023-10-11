@@ -1,12 +1,23 @@
 .. _segmentation:
 
 ========================
-Cube Segmentation
+Segmentation
 ========================
 
 The :guilabel:`Segmentation` tab allows you to set all parameters to extract 3D objects from the imported microscope data.
 
-An important step in the BiofilmQ analysis is that BiofilmQ must be able to identify the biovolume of the biofilm. The segmentation quality can have a large impact on the analysis results. To perform accurate biofilm biovolume segmentation for a wide variety of image types and signal levels, BiofilmQ includes three different segmentation options: 
+BiofilmQ has two approaches for quantifying biofilm properties in space and time, which are based on segmentation of the biofilm images:
+
+- **Case 1: The properties you are interested in do not require single cell detection or your image resolution is not sufficient to detect individual cells.**
+
+  In this case, you can use the cube-based segmentation of BiofilmQ. during which the 3D biofilm biovolume is detected via thresholding and divided it into cubic pseudo-cells. Each cube is then treated as a single pseudo-cell for analysis purposes, for which fluorescence, architectural, spatial, and many more properties are measured. Using this cube-based approach, it is possible to analyze the biofilm-internal structure, by performing biofilm image cytometry (analogous to flow cytometry, but with spatial features), based on the quantification of many parameters for pseudo-cells.
+- **Case 2: You already have a single-cell segmentation from another tool (e.g. our StarDist OPP tool) and would like to analyze single-cell data based on this segmentation.**
+  In this case, you can import your segmentation into BiofilmQ using the label image approach. All subsequent analysis (parameter calculation, visualization…) can then be performed as usual based on the imported segmentation. This option was added in the 2023 release of BiofilmQ version 1.0.0 and is **the only way to analyze single-cell properties**.
+
+Segmentation for **Case 1** (biovolume detection followed by cube segmentation):
+================================================================================
+
+An important step in the analysis is that BiofilmQ must be able to identify the biovolume of the biofilm. The segmentation quality can have a large impact on the analysis results. To perform accurate biofilm biovolume segmentation for a wide variety of image types and signal levels, BiofilmQ includes three different segmentation options: 
 
 #. Automatic segmentation via classical algorithms, such as Otsu, Ridler-Calvard, robust background, or maximum correlation thresholding. 
 #. Semi-manual segmentation supported by immediate visual feedback.
@@ -31,6 +42,11 @@ This is only a minimal working example. Even though the default values will ofte
 segmentation results by optimizing the segmentation parameters according to your input files.
 
 We will explain the influences of each parameter in the following step-by-step explanation.
+
+Segmentation for **Case 2** (import of single-cell segmentation):
+=================================================================
+
+In case you already have a single-cell segmentation and want to import it into BiofilmQ, please follow the steps in :ref:`segmentation_import`.
 
 
 Step-by-Step Explanation
@@ -235,9 +251,9 @@ Based on the segmentation results, we can try to filter out debris as well as ar
 Import segmentation
 ####################
 .. note::
-    This section applies only to old versions (<1.0.0) of BiofilmQ. For newer versions (>=1.0.0) see the separate `segmentation import <segmentation_import.html>`_ section.
+    This section applies only to old BiofilmQ versions (version numbers <1.0.0). For newer BiofilmQ versions (version numbers >=1.0.0) see the separate `segmentation import <segmentation_import.html>`_ section.
 
-To import a segmentation, you will first need an image that represents your segmentation result. This can be a binary image, where white areas are biovolume
+To import a segmentation in the old BiofilmQ versions (version numbers lower than 1.0.0), you will first need an image that represents your segmentation result. This can be a binary image, where white areas are biovolume
 and black areas are background, or it can be a label image, in which each object is colored in a different intensity value as shown in the examples below.
 
 .. image:: ../_static/binaryVsLabel.png
@@ -284,9 +300,9 @@ the results, for example using the :guilabel:`Overlay` option. It is however not
 Merge Segmentation of two channels
 ######################################
 
-The :guilabel:`Merge`  button in the :guilabel:`Merge and Transfer` tab merges two or more **already segmented** channels into each other.
+The :guilabel:`Merge`  button in the :guilabel:`Merge and Transfer` tab merges **two or more already segmented** channels into each other.
 This is useful if you have two signals and want to calculate an overall statistic of both channels, specifically regarding the spatial 
-abundance of biovolume present in each channel. The merged segmentation result will be saved as a segmentation for the destination channel.
+abundance of biovolume present in each channel. The merged segmentation result will be saved as a segmentation for the destination channel and can be treated as any other segmentation for downstream processing.
 Afterwards this channel will no longer contain its original segmentation, only the merged result. However, all original segmentation results
 are saved as a backup inside the folder */data/non-merged-data*. To undo the merging simply copy these files back into the original folder 
 and replace the file containing the merged data.
@@ -300,14 +316,16 @@ This function works differently for cubed and non-cubed biofilms:
 
 - For cubed biofilms the biovolumes of all channels will be merged and cubed again. Now, each cube will contain information about the relative volume abundance in the underlying channels:
 
-* **Cube_RelativeAbundance_chX** Relative abundance of biovolume in the channel indicated (in %)
-* **Cube_Overlap3D_chX_chY** 3D overlap between biovolume in the channels indicated (in %)
+  - **Cube_RelativeAbundance_chX** Relative abundance of biovolume in the channel indicated (in %)
+  - **Cube_Overlap3D_chX_chY** 3D overlap between biovolume in the channels indicated (in %)
 
-- For non-cubed biofilms the objects in all channels will be put into one results file (or one scene in the VTK-format for 3D rendering), independent of whether there is a physical overlap among objects in different channels. 
+- For non-cubed biofilms the objects in all channels will be put into one data file (or one scene in the VTK-format for 3D rendering), independent of whether there is a physical overlap among objects in different channels. 
+  No information on relative abundance or overlap is calculated, since this information only makes sense in the context of cubes. To determine overlap between segmentations of different single-cell segmented channels, you can use the appropriate function in the fluorescence property calculations.
+
 
 .. warning::
     
-    If non-cubed data is merged, only the measurements which are present in both channels will remain.
+    If data is merged, only the measurements which are present in both channels will remain.
     
 
 	
@@ -315,9 +333,14 @@ This function works differently for cubed and non-cubed biofilms:
 
 Transfer segmentation from one channel to another
 ####################################################
+
+..
+  .. note::
+   This section is relevant mainly for old BiofilmQ versions (version numbers <1.0.0). For newer BiofilmQ versions (version numbers >=1.0.0) see the separate :ref:`segmentation_import` section.
+
 In some cases it can be useful to transfer the segmentation result from one channel to another, for example if the segmentation was 
 performed based on a pre-segmented binary or label image. To transfer a segmentation, use the :guilabel:`Transfer`  button in the
-:guilabel:`Merge and Transfer` tab. This will created a renamed copy of the segmentation files of the source channels, such that the copied files are 
+:guilabel:`Merge and Transfer` tab. This will create a renamed copy of the segmentation files of the source channels, such that the copied files are 
 recognized as a segmentation result of the destination channel. If there already is a segmentation available for the destination channels,
 a backup will be created in the directory "data/backup_transfer".
 
