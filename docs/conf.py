@@ -26,7 +26,7 @@ author = "Raimo Hartmann, Hannah Jeckel, Eric Jelli"
 # The short X.Y version
 version = "1.0"
 # The full version, including alpha/beta/rc tags
-release = "v1.0.0"
+release = "1.0.0"
 
 
 # -- General configuration ---------------------------------------------------
