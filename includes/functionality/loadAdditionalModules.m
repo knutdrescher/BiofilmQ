@@ -25,3 +25,15 @@ for i = 1:numel(addModules)
         eval(sprintf('handles = enable_%s(handles);', strrep(addModules(i).name, ' ', '_')));
     end
 end
+
+if isdeployed
+    for i = 1:numel(modules)
+        try
+            fprintf('Enabling additional module "%s"\n', modules{i});
+            eval(sprintf('handles = enable_%s(handles);', strrep(modules{i}, ' ', '_')));
+        catch
+            fprintf(['Module not found: ', modules{i}]);
+        end
+    end
+end
+    
