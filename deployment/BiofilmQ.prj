@@ -361,29 +361,30 @@ The easy-to-use analysis features enable you to generate high-quality data visua
       <file>${PROJECT_ROOT}\..\includes\tools\zSlicer\includes\sort_nat.m</file>
       <file>${PROJECT_ROOT}\..\includes\tools\zSlicer\zSlicer.m</file>
       <file>${PROJECT_ROOT}\..\includes\tools\zSlicer\zSlicer_time.m</file>
-      <file>D:\drescherlab\biofilmq\includes\additional modules</file>
-      <file>D:\drescherlab\biofilmq\includes\additional modules visualization</file>
-      <file>D:\drescherlab\biofilmq\includes\biofilm analysis</file>
-      <file>D:\drescherlab\biofilmq\includes\deconvolution</file>
-      <file>D:\drescherlab\biofilmq\includes\export</file>
-      <file>D:\drescherlab\biofilmq\includes\file handling</file>
-      <file>D:\drescherlab\biofilmq\includes\functionality</file>
-      <file>D:\drescherlab\biofilmq\includes\help</file>
-      <file>D:\drescherlab\biofilmq\includes\image processing</file>
-      <file>D:\drescherlab\biofilmq\includes\image registration</file>
-      <file>D:\drescherlab\biofilmq\includes\layout</file>
-      <file>D:\drescherlab\biofilmq\includes\object processing</file>
-      <file>D:\drescherlab\biofilmq\includes\performance</file>
-      <file>D:\drescherlab\biofilmq\includes\temp</file>
-      <file>D:\drescherlab\biofilmq\includes\tools</file>
+      <file>${PROJECT_ROOT}\..\includes\additional modules</file>
+      <file>${PROJECT_ROOT}\..\includes\additional modules visualization</file>
+      <file>${PROJECT_ROOT}\..\includes\biofilm analysis</file>
+      <file>${PROJECT_ROOT}\..\includes\deconvolution</file>
+      <file>${PROJECT_ROOT}\..\includes\export</file>
+      <file>${PROJECT_ROOT}\..\includes\file handling</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality</file>
+      <file>${PROJECT_ROOT}\..\includes\help</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing</file>
+      <file>${PROJECT_ROOT}\..\includes\image registration</file>
+      <file>${PROJECT_ROOT}\..\includes\layout</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing</file>
+      <file>${PROJECT_ROOT}\..\includes\performance</file>
+      <file>${PROJECT_ROOT}\..\includes\temp</file>
+      <file>${PROJECT_ROOT}\..\includes\tools</file>
+      <file>${PROJECT_ROOT}\..\includes\matlab_funs</file>
     </fileset.resources>
     <fileset.package />
     <fileset.depfun>
-      <file>D:\drescherlab\BiofilmQ\BiofilmQ.fig</file>
-      <file>D:\drescherlab\BiofilmQ\BiofilmQ.m</file>
-      <file>D:\drescherlab\BiofilmQ\directory.mat</file>
-      <file>D:\drescherlab\BiofilmQ\includes\about.m</file>
-      <file>D:\drescherlab\BiofilmQ\includes\biofilmQ_version.txt</file>
+      <file>${PROJECT_ROOT}\..\BiofilmQ.fig</file>
+      <file>${PROJECT_ROOT}\..\BiofilmQ.m</file>
+      <file>${PROJECT_ROOT}\..\directory.mat</file>
+      <file>${PROJECT_ROOT}\..\includes\about.m</file>
+      <file>${PROJECT_ROOT}\..\includes\biofilmQ_version.txt</file>
     </fileset.depfun>
     <build-deliverables>
       <file location="${PROJECT_ROOT}\files-for-deployment\BiofilmQ\testing" name="splash.png" optional="false">D:\drescherlab\BiofilmQ\deployment\files-for-deployment\BiofilmQ\testing\splash.png</file>
