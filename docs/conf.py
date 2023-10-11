@@ -24,9 +24,9 @@ copyright = "2019, Raimo Hartmann, Hannah Jeckel, Eric Jelli"
 author = "Raimo Hartmann, Hannah Jeckel, Eric Jelli"
 
 # The short X.Y version
-version = "0.3"
+version = "1.0"
 # The full version, including alpha/beta/rc tags
-release = "v0.3.0a"
+release = "1.0.0"
 
 
 # -- General configuration ---------------------------------------------------
