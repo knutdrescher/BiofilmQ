@@ -1,0 +1,451 @@
+<deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
+  <configuration build-checksum="2243432916" file="D:\drescherlab\BiofilmQ\deployment\BiofilmQ.prj" location="D:\drescherlab\BiofilmQ\deployment" name="BiofilmQ" preferred-package-location="D:\drescherlab\BiofilmQ\deployment\files-for-deployment\installers" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
+    <param.appname>BiofilmQ</param.appname>
+    <param.icon>${PROJECT_ROOT}\BiofilmQ_resources\icon.ico</param.icon>
+    <param.icons>
+      <file>${PROJECT_ROOT}\BiofilmQ_resources\icon_48.png</file>
+      <file>${PROJECT_ROOT}\BiofilmQ_resources\icon_32.png</file>
+      <file>${PROJECT_ROOT}\BiofilmQ_resources\icon_24.png</file>
+      <file>${PROJECT_ROOT}\BiofilmQ_resources\icon_16.png</file>
+    </param.icons>
+    <param.version>1.0</param.version>
+    <param.authnamewatermark>R. Hartmann, H. Jeckel, and E. Jelli</param.authnamewatermark>
+    <param.email>biofilmQ@gmail.com</param.email>
+    <param.company />
+    <param.summary>The Biofilm Segmentation Toolbox</param.summary>
+    <param.description>BiofilmQ is an advanced biofilm analysis tool to investigate the growth of cells inside large 3-dimensional biofilm communities. In most cases the analysis of spatial fluorescence differences requires single-cell resolution. BiofilmQ overcomes this obstacle by a novel segmentation approach.
+
+BiofilmQ dividies bacterial biovolume obtained by threshold-based 3D segmentation approaches into cubic pseudo-cells. Each cube is treated as a single cell with properties from fluorescent, architectural, spatial and many more measurements. By using a cube-based approach, you can reach pseudo-single-cell resolution.
+
+If your experiment includes multi-color image stacks, you can generate flow-cytometry-like datasets and analyse spatial properties of gene expression or subpopulation migration without optical single-cell resolution.
+
+The easy-to-use analysis features enable you to generate high-quality data visualization without any programming skills.</param.description>
+    <param.screenshot>${PROJECT_ROOT}\..\includes\layout\logo_large.png</param.screenshot>
+    <param.guid />
+    <param.installpath.string>\BiofilmQ\</param.installpath.string>
+    <param.installpath.combo>option.installpath.appdata</param.installpath.combo>
+    <param.logo>${PROJECT_ROOT}\..\includes\layout\logo_large_half.png</param.logo>
+    <param.install.notes />
+    <param.target.install.notes />
+    <param.intermediate>${PROJECT_ROOT}\files-for-deployment\BiofilmQ\testing</param.intermediate>
+    <param.files.only>${PROJECT_ROOT}\files-for-deployment\BiofilmQ\end_user_files</param.files.only>
+    <param.output>${PROJECT_ROOT}\files-for-deployment\BiofilmQ\installers</param.output>
+    <param.logdir>${PROJECT_ROOT}\files-for-deployment</param.logdir>
+    <param.enable.clean.build>false</param.enable.clean.build>
+    <param.user.defined.mcr.options />
+    <param.target.type>subtarget.standalone</param.target.type>
+    <param.support.packages />
+    <param.web.mcr>true</param.web.mcr>
+    <param.package.mcr>false</param.package.mcr>
+    <param.no.mcr>false</param.no.mcr>
+    <param.web.mcr.name>BiofilmQ</param.web.mcr.name>
+    <param.package.mcr.name>MyAppInstaller_mcr</param.package.mcr.name>
+    <param.no.mcr.name>MyAppInstaller_app</param.no.mcr.name>
+    <param.windows.command.prompt>false</param.windows.command.prompt>
+    <param.create.log>false</param.create.log>
+    <param.log.file />
+    <param.native.matlab>false</param.native.matlab>
+    <param.checkbox>false</param.checkbox>
+    <param.example />
+    <param.help.text>Syntax 
+	 BiofilmQ -? 
+	 BiofilmQ varargin 
+ Input Arguments 
+	 -?  print help on how to use the application 
+	 varargin  input arguments 
+ Description 
+ 	 BiofilmQ is an advanced biofilm analysis tool to investigate the growth of cells inside large 3-dimensional biofilm communities. In most cases the analysis of spatial fluorescence differences requires single-cell resolution. BiofilmQ overcomes this obstacle by a novel segmentation approach.
+
+BiofilmQ dividies bacterial biovolume obtained by threshold-based 3D segmentation approaches into cubic pseudo-cells. Each cube is treated as a single cell with properties from fluorescent, architectural, spatial and many more measurements. By using a cube-based approach, you can reach pseudo-single-cell resolution.
+
+If your experiment includes multi-color image stacks, you can generate flow-cytometry-like datasets and analyse spatial properties of gene expression or subpopulation migration without optical single-cell resolution.
+
+The easy-to-use analysis features enable you to generate high-quality data visualization without any programming skills.</param.help.text>
+    <unset>
+      <param.company />
+      <param.guid />
+      <param.installpath.string />
+      <param.install.notes />
+      <param.target.install.notes />
+      <param.enable.clean.build />
+      <param.target.type />
+      <param.support.packages />
+      <param.web.mcr />
+      <param.package.mcr />
+      <param.no.mcr />
+      <param.package.mcr.name />
+      <param.no.mcr.name />
+      <param.create.log />
+      <param.log.file />
+      <param.native.matlab />
+      <param.checkbox />
+      <param.example />
+    </unset>
+    <fileset.main>
+      <file>${PROJECT_ROOT}\..\BiofilmQ.m</file>
+    </fileset.main>
+    <fileset.resources>
+      <file>${PROJECT_ROOT}\..\includes\about.m</file>
+      <file>${PROJECT_ROOT}\..\includes\biofilm analysis\biofilmAnalysis.m</file>
+      <file>${PROJECT_ROOT}\..\includes\biofilm analysis\includes\addRangeLabel.m</file>
+      <file>${PROJECT_ROOT}\..\includes\biofilm analysis\includes\biofilmInfo.m</file>
+      <file>${PROJECT_ROOT}\..\includes\biofilm analysis\includes\checkInput.m</file>
+      <file>${PROJECT_ROOT}\..\includes\biofilm analysis\includes\determineIsRelatedToFounderCells.m</file>
+      <file>${PROJECT_ROOT}\..\includes\biofilm analysis\includes\getLoadedBiofilmFromWorkspace.m</file>
+      <file>${PROJECT_ROOT}\..\includes\biofilm analysis\includes\loadFiles.m</file>
+      <file>${PROJECT_ROOT}\..\includes\biofilm analysis\includes\plotting\functions\extractDataBiofilm.m</file>
+      <file>${PROJECT_ROOT}\..\includes\biofilm analysis\includes\plotting\functions\extractDataBiofilm_kymograph.m</file>
+      <file>${PROJECT_ROOT}\..\includes\biofilm analysis\includes\plotting\functions\smoothCellNumber.m</file>
+      <file>${PROJECT_ROOT}\..\includes\biofilm analysis\includes\plotting\histogram1D.m</file>
+      <file>${PROJECT_ROOT}\..\includes\biofilm analysis\includes\plotting\kymograph.m</file>
+      <file>${PROJECT_ROOT}\..\includes\biofilm analysis\includes\plotting\plotXY.m</file>
+      <file>${PROJECT_ROOT}\..\includes\biofilm analysis\includes\plotting\readouts\getLabelsFromGUI.m</file>
+      <file>${PROJECT_ROOT}\..\includes\biofilm analysis\includes\plotting\readouts\getRangeFromGUI.m</file>
+      <file>${PROJECT_ROOT}\..\includes\biofilm analysis\includes\plotting\readouts\getUnitsFromGUI.m</file>
+      <file>${PROJECT_ROOT}\..\includes\biofilm analysis\includes\plotting\scatterPlotXY.m</file>
+      <file>${PROJECT_ROOT}\..\includes\biofilm analysis\includes\renderBiofilmThumbnail.m</file>
+      <file>${PROJECT_ROOT}\..\includes\biofilm analysis\includes\returnUnitLabel.m</file>
+      <file>${PROJECT_ROOT}\..\includes\biofilmQ_version.txt</file>
+      <file>${PROJECT_ROOT}\..\includes\deconvolution\convertFolderContentToChannel.m</file>
+      <file>${PROJECT_ROOT}\..\includes\deconvolution\generateHuygensBatchFile.m</file>
+      <file>${PROJECT_ROOT}\..\includes\deconvolution\getCurrentChannels.m</file>
+      <file>${PROJECT_ROOT}\..\includes\deconvolution\moveImageToChannel.m</file>
+      <file>${PROJECT_ROOT}\..\includes\deconvolution\prepareImagesForDeconvolution.m</file>
+      <file>${PROJECT_ROOT}\..\includes\deconvolution\removeFilesAfterDeconvolution.m</file>
+      <file>${PROJECT_ROOT}\..\includes\export\createVisualization.m</file>
+      <file>${PROJECT_ROOT}\..\includes\export\csv\cell2csv.m</file>
+      <file>${PROJECT_ROOT}\..\includes\export\csv\writeCSV.m</file>
+      <file>${PROJECT_ROOT}\..\includes\export\exportData.m</file>
+      <file>${PROJECT_ROOT}\..\includes\export\fcs\exportFCS.m</file>
+      <file>${PROJECT_ROOT}\..\includes\export\fcs\writeFCS.m</file>
+      <file>${PROJECT_ROOT}\..\includes\export\visualization\isosurfaceLabel.m</file>
+      <file>${PROJECT_ROOT}\..\includes\export\visualization\isosurfaceLabelSim.m</file>
+      <file>${PROJECT_ROOT}\..\includes\export\visualization\MarchingCubes.m</file>
+      <file>${PROJECT_ROOT}\..\includes\export\visualization\paraview\mtVTK library\base64encode.m</file>
+      <file>${PROJECT_ROOT}\..\includes\export\visualization\paraview\mtVTK library\mvtk_write.m</file>
+      <file>${PROJECT_ROOT}\..\includes\export\visualization\paraview\mtVTK library\zstream.m</file>
+      <file>${PROJECT_ROOT}\..\includes\export\visualization\paraview\mtVTK library\zstream.mexw64</file>
+      <file>${PROJECT_ROOT}\..\includes\export\visualization\stlwrite.m</file>
+      <file>${PROJECT_ROOT}\..\includes\file handling\analyzeDirectory.m</file>
+      <file>${PROJECT_ROOT}\..\includes\file handling\correctFrameNumbering.m</file>
+      <file>${PROJECT_ROOT}\..\includes\file handling\disk_free.m</file>
+      <file>${PROJECT_ROOT}\..\includes\file handling\folderSizeTree.m</file>
+      <file>${PROJECT_ROOT}\..\includes\file handling\imread3D.m</file>
+      <file>${PROJECT_ROOT}\..\includes\file handling\imshow3D.m</file>
+      <file>${PROJECT_ROOT}\..\includes\file handling\imwrite3D.m</file>
+      <file>${PROJECT_ROOT}\..\includes\file handling\loadObjects.m</file>
+      <file>${PROJECT_ROOT}\..\includes\file handling\OME\bfmatlab\bfCheckJavaMemory.m</file>
+      <file>${PROJECT_ROOT}\..\includes\file handling\OME\bfmatlab\bfCheckJavaPath.m</file>
+      <file>${PROJECT_ROOT}\..\includes\file handling\OME\bfmatlab\bfGetPlane.m</file>
+      <file>${PROJECT_ROOT}\..\includes\file handling\OME\bfmatlab\bfGetReader.m</file>
+      <file>${PROJECT_ROOT}\..\includes\file handling\OME\bfmatlab\bioformats_package.jar</file>
+      <file>${PROJECT_ROOT}\..\includes\file handling\OME\convertNdToTiff.m</file>
+      <file>${PROJECT_ROOT}\..\includes\file handling\OME\getND2Stack.m</file>
+      <file>${PROJECT_ROOT}\..\includes\file handling\readtable_fast.m</file>
+      <file>${PROJECT_ROOT}\..\includes\file handling\saveObjects.m</file>
+      <file>${PROJECT_ROOT}\..\includes\file handling\showFileList.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\applyReferencePadding.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\assembleImageRange.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\checkAndStoreInput.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\checkCancelButton.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\checkFileRange.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\checkMemory.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\checkMetadataOfSelectedFiles.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\convertToUm.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\deleteEmptyPanels.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\dirInfo.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\disableCancelButton.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\displayStatus.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\displayTime.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\enableCancelButton.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\enableDisableChildren.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\findjobj.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\generateValidFileName.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\getChannelName.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\getFeaturesFromName.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\interpolateCropping.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\isToolboxAvailable.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\loadAdditionalModules.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\loadAdditionalModules_Visualization.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\makeColormapParaview.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\nanmax.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\nanmean.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\nanmedian.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\nanmin.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\nanstd.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\nansum.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\openHelp.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\parfor monitoring\ProgressBar.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\positionExternalFigure.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\registerAndCropImage.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\rgb2hex.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\showErrorMessage.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\storeValues.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\tempDirInfo.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\textprogressbar.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\tidyGUIHandles.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\toggleBusyPointer.m</file>
+      <file>${PROJECT_ROOT}\..\includes\functionality\updateWaitbar.m</file>
+      <file>${PROJECT_ROOT}\..\includes\help\gridding.png</file>
+      <file>${PROJECT_ROOT}\..\includes\help\labels.png</file>
+      <file>${PROJECT_ROOT}\..\includes\help\none.png</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\actions\conncomp.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\actions\convolveBySlice.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\actions\fadeBottom.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\actions\mergeChannels.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\actions\ordfilt3D.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\actions\performSVD.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\actions\perim3D.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\actions\removeFloatingCells.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\actions\rotateBiofilmImg.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\actions\topHatFilter.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\actions\zInterpolation.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\actions\zInterpolation_nearest.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\determineFilterSize.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\determineSimpleThreshold.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\functions\cubeSegmentation.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\functions\determineBackground.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\functions\fitPlane.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\functions\isodata.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\functions\MCT_Thresholding.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\functions\mergeChannelsCube.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\functions\mergeChannelsNone.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\functions\NoiseLevel.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\functions\objectDeclumping_cube.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\functions\objectDeclumping_labels.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\functions\objectDeclumping_none.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\functions\robustBackground.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\imagePreProcessing.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\objectDeclumping.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\processAll.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\processImages.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\resizingAndDenoising.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image processing\simpleThresholding.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image registration\dftregistration.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image registration\performImageAlignment2D.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image registration\performImageAlignment3D.m</file>
+      <file>${PROJECT_ROOT}\..\includes\image registration\registerImages.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\addIcon.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\addPanelToBoxPanel.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\centerText.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\centerTexts.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\changeFontSize.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\createJavaTable.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\fixTabVisibility.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\+mixin\Container.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\+mixin\Flex.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\+mixin\Panel.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\Box.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\BoxPanel.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\ButtonBox.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\calcPixelSizes.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\CardPanel.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\ChildEvent.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\ChildObserver.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\Container.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\Divider.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\Empty.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\FigureData.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\FigureObserver.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\getPosition.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\Grid.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\HBox.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\HButtonBox.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\Node.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\Panel.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\PointerManager.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\ScrollingPanel.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\SelectionData.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\set.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\setPosition.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\Text.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\tracking.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\VBox.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\VBoxFlex.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\framework\layout\+uix\VButtonBox.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\loadAnalysisPanel.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\logo.png</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\logo_large.png</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\populateTabs.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\replaceUIPanel.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\restylePanel.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\sortTabs.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\splashScreen\animation\splash01.png</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\splashScreen\animation\splash02.png</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\splashScreen\animation\splash03.png</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\splashScreen\animation\splash04.png</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\splashScreen\animation\splash05.png</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\splashScreen\animation\splash06.png</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\splashScreen\animation\splash07.png</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\splashScreen\animation\splash08.png</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\splashScreen\animation\splash09.png</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\splashScreen\animation\splash10.png</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\splashScreen\animation\splash11.png</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\splashScreen\animation\splash12.png</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\splashScreen\animation\splash13.png</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\splashScreen\animation\splash14.png</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\splashScreen\animation\splash15.png</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\splashScreen\animation\splash16.png</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\splashScreen\animation\splash17.png</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\splashScreen\animation\splash18.png</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\splashScreen\animation\splash19.png</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\splashScreen\animation\splash20.png</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\splashScreen\animation\splash21.png</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\splashScreen\animation\splash22.png</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\splashScreen\animation\splash23.png</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\splashScreen\animation\splash24.png</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\splashScreen\deleteSplashScreen.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\splashScreen\SplashScreen.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\toggleUIElements.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\uicomponent.m</file>
+      <file>${PROJECT_ROOT}\..\includes\layout\welcome.html</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\actions\calculateCell2CellDistance.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\actions\calculateConvexity.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\actions\calculateDistanceToCenterOfBiofilm.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\actions\calculateDistanceToObjectID.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\actions\calculateDistanceToSurface.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\actions\calculateFluorescenceProperties.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\actions\calculateGlobalBiofilmProperties.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\actions\calculateGrowthRate.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\actions\calculateLocalAreaDensity.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\actions\calculateLocalDensity.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\actions\calculateParameterCombination.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\actions\calculateSubstrateArea.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\actions\calculateSurfaceProperties.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\actions\calculateUserDefinedParameter.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\actions\calculateVelocity.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\actions\filterCellsByIntensity.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\actions\filterObjects.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\actions\removeBadObjects.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\actions\removeObjectParameters.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\actions\removeObjectsOnBorder.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\actions\tagCells.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\actions\transferSegmentation.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\averageObjectParameters.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\calculateCellProperties.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\functions\cooc3d\cooc3d.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\functions\createHull.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\functions\fit_ellipse.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\functions\fluorescence properties calculations\autocorr2d.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\functions\fluorescence properties calculations\calculate3dOverlap.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\functions\fluorescence properties calculations\calculateAutocorrelation.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\functions\fluorescence properties calculations\calculateAutocorrelation3D.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\functions\fluorescence properties calculations\calculateDensityCorrelationBinary.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\functions\fluorescence properties calculations\calculateFluorescenceRatio.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\functions\fluorescence properties calculations\calculateHaralickTextureFeatures.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\functions\fluorescence properties calculations\calculateIntegratedFluorescenceRatio.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\functions\fluorescence properties calculations\calculateIntegratedIntensityPerObject.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\functions\fluorescence properties calculations\calculateIntegratedIntensityPerObjectShell.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\functions\fluorescence properties calculations\calculateMandersCorrelation.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\functions\fluorescence properties calculations\calculateMeanIntensityPerObject.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\functions\fluorescence properties calculations\calculateMeanIntensityPerObjectShell.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\functions\fluorescence properties calculations\calculateObjectShells.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\functions\fluorescence properties calculations\calculatePearsonCorrelation.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\functions\fluorescence properties calculations\densityCorr.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\functions\fluorescence properties calculations\manders_overlapp_coeff.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\functions\fluorescence properties calculations\manders_split_coloc_coeff.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\functions\fluorescence properties calculations\pearson_coeff.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\functions\fluorescence properties calculations\returnCorrelationLength.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\functions\fluorescence properties calculations\visualizeExtracellularFluorophores.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\functions\getImageFromRaw.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\functions\getNeighborCells.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\functions\imInertiaEllipsoid\inertiaEllipsoid.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\functions\imInertiaEllipsoid\rotation3dToEulerAngles.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\functions\neighbourND.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\processObjects.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\trackCells.m</file>
+      <file>${PROJECT_ROOT}\..\includes\object processing\trackCubes.m</file>
+      <file>${PROJECT_ROOT}\..\includes\performance\checkVarsMatFile\checkVarnames.mexw64</file>
+      <file>${PROJECT_ROOT}\..\includes\tools\chooseBiofilms\chooseBiofilms.m</file>
+      <file>${PROJECT_ROOT}\..\includes\tools\folderNavigator\folderNavigator.m</file>
+      <file>${PROJECT_ROOT}\..\includes\tools\zSlicer\includes\sort_nat.m</file>
+      <file>${PROJECT_ROOT}\..\includes\tools\zSlicer\zSlicer.m</file>
+      <file>${PROJECT_ROOT}\..\includes\tools\zSlicer\zSlicer_time.m</file>
+      <file>D:\drescherlab\biofilmq\includes\additional modules</file>
+      <file>D:\drescherlab\biofilmq\includes\additional modules visualization</file>
+      <file>D:\drescherlab\biofilmq\includes\biofilm analysis</file>
+      <file>D:\drescherlab\biofilmq\includes\deconvolution</file>
+      <file>D:\drescherlab\biofilmq\includes\export</file>
+      <file>D:\drescherlab\biofilmq\includes\file handling</file>
+      <file>D:\drescherlab\biofilmq\includes\functionality</file>
+      <file>D:\drescherlab\biofilmq\includes\help</file>
+      <file>D:\drescherlab\biofilmq\includes\image processing</file>
+      <file>D:\drescherlab\biofilmq\includes\image registration</file>
+      <file>D:\drescherlab\biofilmq\includes\layout</file>
+      <file>D:\drescherlab\biofilmq\includes\object processing</file>
+      <file>D:\drescherlab\biofilmq\includes\performance</file>
+      <file>D:\drescherlab\biofilmq\includes\temp</file>
+      <file>D:\drescherlab\biofilmq\includes\tools</file>
+    </fileset.resources>
+    <fileset.package />
+    <fileset.depfun>
+      <file>D:\drescherlab\BiofilmQ\BiofilmQ.fig</file>
+      <file>D:\drescherlab\BiofilmQ\BiofilmQ.m</file>
+      <file>D:\drescherlab\BiofilmQ\directory.mat</file>
+      <file>D:\drescherlab\BiofilmQ\includes\about.m</file>
+      <file>D:\drescherlab\BiofilmQ\includes\biofilmQ_version.txt</file>
+    </fileset.depfun>
+    <build-deliverables>
+      <file location="${PROJECT_ROOT}\files-for-deployment\BiofilmQ\testing" name="splash.png" optional="false">D:\drescherlab\BiofilmQ\deployment\files-for-deployment\BiofilmQ\testing\splash.png</file>
+      <file location="${PROJECT_ROOT}\files-for-deployment\BiofilmQ\testing" name="readme.txt" optional="true">D:\drescherlab\BiofilmQ\deployment\files-for-deployment\BiofilmQ\testing\readme.txt</file>
+      <file location="${PROJECT_ROOT}\files-for-deployment\BiofilmQ\testing" name="BiofilmQ.exe" optional="false">D:\drescherlab\BiofilmQ\deployment\files-for-deployment\BiofilmQ\testing\BiofilmQ.exe</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>C:\Program Files\MATLAB\R2020b</root>
+      <toolboxes>
+        <toolbox name="matlabcoder" />
+        <toolbox name="embeddedcoder" />
+        <toolbox name="gpucoder" />
+        <toolbox name="fixedpoint" />
+        <toolbox name="matlabhdlcoder" />
+        <toolbox name="neuralnetwork" />
+      </toolboxes>
+      <toolbox>
+        <matlabcoder>
+          <enabled>true</enabled>
+        </matlabcoder>
+      </toolbox>
+      <toolbox>
+        <embeddedcoder>
+          <enabled>true</enabled>
+        </embeddedcoder>
+      </toolbox>
+      <toolbox>
+        <gpucoder>
+          <enabled>true</enabled>
+        </gpucoder>
+      </toolbox>
+      <toolbox>
+        <fixedpoint>
+          <enabled>true</enabled>
+        </fixedpoint>
+      </toolbox>
+      <toolbox>
+        <matlabhdlcoder>
+          <enabled>true</enabled>
+        </matlabhdlcoder>
+      </toolbox>
+      <toolbox>
+        <neuralnetwork>
+          <enabled>true</enabled>
+        </neuralnetwork>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>10.0</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>

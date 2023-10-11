@@ -49,5 +49,4 @@ docs/build
 docs/_build
 
 # build folder
-deployment/BiofilmQ
-deployment/BiofilmQ_incl_mcr
+deployment/files-for-deployment
