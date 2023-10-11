@@ -1,0 +1,43 @@
+ mVTK - a VTK library for MATLAB
+ =====================================
+
+ Copyright (C) 2015 Guillaume Flandin <Guillaume@artefact.tk>
+ http://www.artefact.tk/software/matlab/mvtk/
+
+ mVTK is a MATLAB library to export data in the VTK file format.
+ Exported data can then be displayed in the open source ParaView
+ visualisation software. The export function supports legacy and
+ XML file formats, both ASCII and binary. 
+ 
+   VTK: http://www.vtk.org/
+   VTK file format: http://www.vtk.org/VTK/img/file-formats.pdf
+   ParaView: http://www.paraview.org/
+
+ This library is also part of SPM:
+ 
+   SPM: http://www.fil.ion.ucl.ac.uk/spm/
+
+ INSTALLATION
+ ============
+ 
+ Simply add the mvtk directory to the MATLAB path:
+ 
+  >> addpath /home/login/Documents/MATLAB/mvtk
+  
+ TUTORIAL
+ ========
+      
+  >> load mri
+  >> Ds = smooth3(squeeze(D));
+  >> M = isosurface(Ds,5);
+  >> M.vertices(:,3) = M.vertices(:,3) / 0.4;
+  >> mvtk_write(M,'mri.vtp','xml-binary');
+  
+  >> load wind
+  >> M = struct('vertices',[x(:) y(:) z(:)],'vector',[u(:) v(:) w(:)]);
+  >> mvtk_write(M,'wind.vtk');
+ 
+ -------------------------------------------------------------------------------
+ MATLAB is a Registered Trademark of The Mathworks, Inc.
+ 
+ Copyright (C) 2015 Guillaume Flandin <Guillaume@artefact.tk>
