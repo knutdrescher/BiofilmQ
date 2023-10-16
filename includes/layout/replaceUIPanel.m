@@ -1246,11 +1246,22 @@ switch panelName
         
     case 'uipanel_workflow_dataExport_csv'
         % Create horizontal grid
-        h = uix.HBox('Parent', handles.layout.uipanels.(panelName).Parent, 'Padding', 2*padding, 'Spacing', spacing);
+        h0 = uix.VBox('Parent', handles.layout.uipanels.(panelName).Parent, 'Padding', padding, 'Spacing', spacing);
+        h = uix.HBox('Parent', h0, 'Padding', 2*padding, 'Spacing', spacing);
         handles.uicontrols.text.text_workflow_dataExport_csv_descr.Parent = h;
-        h_button = uix.HButtonBox('Parent', h, 'Spacing', spacing, 'HorizontalAlignment', 'right', 'VerticalAlignment', 'top', 'ButtonSize', [150 objectHeight]);
+        h_button = uix.HButtonBox('Parent', h, 'Spacing', spacing, 'HorizontalAlignment', 'right', 'VerticalAlignment', 'top', 'ButtonSize', [200 objectHeight]);
         handles.uicontrols.pushbutton.pushbutton_action_exportToCSV.Parent = h_button;
-        h.Widths = [-1, 150];
+        h.Widths = [-1, 200];
+         
+        h1 = uix.HBox('Parent', h0, 'Padding', 2*padding, 'Spacing', spacing);
+        handles.uicontrols.text.text_workflow_dataExport_advanced_descr.Parent = h1;
+        h_button2 = uix.HButtonBox('Parent', h1, 'Spacing', spacing, 'HorizontalAlignment', 'right', 'VerticalAlignment', 'top', 'ButtonSize', [200 objectHeight]);
+        handles.uicontrols.pushbutton.pushbutton_action_advancedExport.Parent = h_button2;
+        h1.Widths = [-1, 200];
+        
+        uix.Empty('Parent', h0);
+        
+        h0.Heights = [3*objectHeight, 3*objectHeight, -1];
         
     case 'uipanel_imageRange_visualization'
         % Create horizontal grid

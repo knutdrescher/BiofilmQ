@@ -31,7 +31,7 @@ function varargout = BiofilmQ(varargin)
 
 % Edit the above text_workflow_simulationInput_cellExpansionFactorDescr to modify the response to help BiofilmQ
 
-% Last Modified by GUIDE v2.5 09-Oct-2022 17:00:12
+% Last Modified by GUIDE v2.5 13-Oct-2023 19:14:30
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 0;
@@ -6315,3 +6315,13 @@ function popupmenu_labelImage_Channel_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
+
+
+% --- Executes on button press in pushbutton_action_advancedExport.
+function pushbutton_action_advancedExport_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton_action_advancedExport (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+advancedExport(handles)
+
+
