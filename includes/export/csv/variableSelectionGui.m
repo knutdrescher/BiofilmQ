@@ -42,18 +42,13 @@ uiddy = uidropdown(f, 'Position', [1185 135 200 20], 'Items', ddxyItems, 'Value'
 uiddyLabel = uilabel(f,'Position',[1102 135 200 20], 'Text', 'Row variables:');
 uidd = uidropdown(f, 'Position', [1185 100 200 20], 'Items', ddItems);
 uiddLabel = uilabel(f,'Position',[1110 100 200 20], 'Text', 'Export mode:');
-[~] = uibutton(f, 'Position', [1185 45 200 20], 'Text', 'Export', 'ButtonPushedFcn', @(btn,event) uiresume(f)); 
+[~] = uibutton(f, 'Position', [1185 45 200 20], 'Text', 'Export', 'ButtonPushedFcn', @(btn,event) exportButtonPushed(f, uiddx, uiddy)); 
 
 % Wait for user to press "Export"
 
 uiwait(f);
 
 % Format user input for return values
-
-if strcmp(uiddx.Value, uiddy.Value)
-    warning('Horizontal and vertical table variables equal!')
-    uiwait(f);
-end
 
 variables2Check = {}; 
 channel2Check = [];
@@ -94,6 +89,19 @@ exportX = uiddx.Value;
 exportY = uiddy.Value;
 
 close(f);
+
+end
+
+function exportButtonPushed(f, uiddx, uiddy)
+
+if strcmp(uiddx.Value, uiddy.Value)
+    warning('Horizontal and vertical table variables equal!')
+    h = msgbox('Horizontal and vertical table variables equal! Please select different column and row variables','','warn');
+    uiwait(h)
+    return
+end
+
+uiresume(f)
 
 end
 

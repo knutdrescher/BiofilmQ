@@ -6322,5 +6322,6 @@ function pushbutton_action_advancedExport_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton_action_advancedExport (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-advancedExport(handles.settings.directory)
+advancedExport(handles)
+
 

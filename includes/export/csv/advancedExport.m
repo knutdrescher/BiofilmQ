@@ -1,7 +1,7 @@
-function advancedExport(dataDirectory)
+function advancedExport(handles)
 
 % get data location
-outputdir = uigetdir(dataDirectory, 'Select data parent folder'); 
+outputdir = uigetdir(handles.settings.directory, 'Select data parent folder'); 
 dataFolders = dir([outputdir, '\Pos*']); %Only Pos folders, or also other types?
 
 for i = 1:length(dataFolders)
@@ -21,7 +21,7 @@ dataFiles = dir(fullfile(dataFolders(1).folder, dataFolders(1).name, 'data\*ch1_
 ch = {'ch1'}; 
 j = 2; 
 
-while exist(fullfile(dataFiles(1).folder, strrep(dataFiles(1).name, '_ch1_', ['_ch', str2double(j), '_']))) 
+while exist(fullfile(dataFiles(1).folder, strrep(dataFiles(1).name, '_ch1_', ['_ch', num2str(j), '_']))) 
 
     ch{j} = ['ch', char(string(j))]; 
     j = j + 1; 
@@ -39,6 +39,9 @@ for k = 1:length(ch)
 end
 
 [exportX, exportY, exportCase, variables2Check, channel2Check] = variableSelectionGui(varList, ch);
+
+toggleBusyPointer(handles, true)
+updateWaitbar(handles, 0.01);
 
 % prealocate dataTable                
 dataMat = nan(length(dataFolders), length(dataFiles), length(variables2Check));           
@@ -95,6 +98,8 @@ for m = 1:nFolders
             end
         end           
     end
+    
+    updateWaitbar(handles, (m-1)/(nFolders)+0.01);
     
 end
 
@@ -165,6 +170,8 @@ end
 
 delete(fullfile(outputdir, 'Summary_multiple_variables.xlsx'));
 
+updateWaitbar(handles, 0.95)
+
 switch exportCase
     case 'Data summary (all in one sheet)'
         dataTableWrite = {}; 
@@ -188,6 +195,10 @@ switch exportCase
             end
         end          
 end
+
+updateWaitbar(handles, 1)
+toggleBusyPointer(handles, false)
+updateWaitbar(handles, 0)
 
 end
 
