@@ -2,19 +2,20 @@ function advancedExport(handles)
 
 % get data location
 outputdir = uigetdir(handles.settings.directory, 'Select data parent folder'); 
-dataFolders = dir([outputdir, '\Pos*']); %Only Pos folders, or also other types?
-
-for i = 1:length(dataFolders)
-    
-    dataFolders(i).position = str2double(dataFolders(i).name(4:end)); 
-    
-end
-
-dataFoldersT  = struct2table(dataFolders);
-dataFoldersTS = sortrows(dataFoldersT, 'position'); 
-dataFolders = table2struct(dataFoldersTS); 
+dataFolders = dir([outputdir, '\*']); 
+dataFolders = dataFolders([dataFolders.isdir]);
+dataFolders = dataFolders(~(strcmp({dataFolders.name}, '..')|strcmp({dataFolders.name}, '.')));
 
 dataFiles = dir(fullfile(dataFolders(1).folder, dataFolders(1).name, 'data\*ch1_frame*.mat'));
+
+if isempty(dataFiles)
+    
+    h = msgbox('No .mat file present! Is channel 1 segmented?','','warn');
+    uiwait(h);
+    return
+    
+end
+    
 
 % check for amount of channels
 
@@ -57,7 +58,7 @@ for m = 1:nFolders
      
     % extract requested data from files
     
-    disp(['Exporting Position ', char(string(dataFolders(m).position)), '...'])
+    disp(['Exporting Position ', num2str(m), '...'])
     
     for n = 1:nFiles
         

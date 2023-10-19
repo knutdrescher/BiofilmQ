@@ -20,6 +20,7 @@ for i = 1:length(ch)
     varListCh = varList{i};
     tab(i) = uitab(tabgp,'Title',ch{i});
     varListReduced = unique(erase(varListCh, suffixes));
+    editable = [];
     for j = 1:length(varListReduced)
         editable(j, :) = sum(cell2mat(cellfun(@(x) strcmp(x, varListCh), strcat(varListReduced(j), suffixes), 'UniformOutput', false)));
     end
