@@ -2,6 +2,7 @@ function advancedExport(handles)
 
 % get data location
 outputdir = uigetdir(handles.settings.directory, 'Select data parent folder'); 
+
 dataFolders = dir([outputdir, '\*']); 
 dataFolders = dataFolders([dataFolders.isdir]);
 dataFolders = dataFolders(~(strcmp({dataFolders.name}, '..')|strcmp({dataFolders.name}, '.')));
@@ -15,7 +16,6 @@ if isempty(dataFiles)
     return
     
 end
-    
 
 % check for amount of channels
 

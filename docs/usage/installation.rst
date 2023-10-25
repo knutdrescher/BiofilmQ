@@ -22,18 +22,18 @@ Downloads
      - Size
      - Operation System
      - Comments
-   * - `BiofilmQ-1.0.0.zip <https://github.com/knutdrescher/BiofilmQ/archive/refs/tags/v1.0.0.zip>`_ (recommended\ :sup:`1`)
-     - v1.0.0
+   * - `BiofilmQ-1.0.1.zip <https://github.com/knutdrescher/BiofilmQ/archive/refs/tags/v1.0.1.zip>`_ (recommended\ :sup:`1`)
+     - v1.0.1
      - 77 Mb
      - Windows 10, MacOSX, Linux
      - Requires MATLAB R2017b or later with the **Image Processing Toolbox**, **Curve Fitting Toolbox**, and **Statistics and Machine Learning Toolbox**. The **Parallel Computing Toolbox** is optional.
-   * - `BiofilmQ-installer-v1.0.0.exe <https://github.com/knutdrescher/BiofilmQ/releases/download/v1.0.0/BiofilmQ-installer-v1.0.0.exe>`_ (without MATLAB\ :sup:`2`)
-     - v1.0.0
+   * - `BiofilmQ-installer-v1.0.1.exe <https://github.com/knutdrescher/BiofilmQ/releases/download/v1.0.1/BiofilmQ-installer-v1.0.1.exe>`_ (without MATLAB\ :sup:`2`)
+     - v1.0.1
      - 62 Mb
      - Windows 10
      - **Internet connection required** for MCR download.
-   * - `BiofilmQ_MCR-installer-v1.0.0.zip <https://drescherlab.org/data/biofilmQ/BiofilmQ_MCR-installer-v1.0.0.zip>`_ (without MATLAB\ :sup:`2`)
-     - v1.0.0
+   * - `BiofilmQ_MCR-installer-v1.0.1.zip <https://drescherlab.org/data/biofilmQ/BiofilmQ_MCR-installer-v1.0.1.zip>`_ (without MATLAB\ :sup:`2`)
+     - v1.0.1
      - 2.31 GB
      - Windows 10
      - MCR included.
