@@ -56,7 +56,7 @@ choice (e.g. Microsoft Excel). BiofilmQ offers two types of spreadsheet export:
 
 - The :guilabel:`Export`-button exports the selected parameters for all objects to CSV-files. This is a text-file format which can be easily imported into the spreadsheet application. If your data contains a time series, for each frame of the time series, the export function saves a separate file in the subfolder ‘/data/txt_output’ inside your experiment folder. Additionally, it saves a summary file containing the global variables for every frame in the same folder.
 
--	The :guilabel:`Advanced export`-button allows you to export the global biofilm parameters for multiple time points and positions, all into one excel file. It requires a data structure in which the subfolders of your main experiment folder each contain the segmented time series data for one position. The workflow consists of the following steps: 
+- The :guilabel:`Advanced export`-button allows you to export the global biofilm parameters for multiple time points and positions, all into one excel file. It requires a data structure in which the subfolders of your main experiment folder each contain the segmented time series data for one position. The workflow consists of the following steps: 
     
   #.	Select your main experiment folder in the file browser that opens after pressing the :guilabel:`Advanced export`-button.
 
