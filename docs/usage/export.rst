@@ -74,6 +74,16 @@ choice (e.g. Microsoft Excel). BiofilmQ offers two types of spreadsheet export:
     :width: 1419 px
     :align: center
 
+Required data structure for the advanced export. The main experiment folder contains one folder for each 
+position you want to export. Each position folder in turn contains the image data (with metadata files) for 
+the different frames of one position, for every imaging channel you acquired. The images should be named according 
+to the BiofilmQ naming scheme: *_pos*_frame*_Nz*.tif, the file name before the position identifier ('_pos') should be 
+the same for all position folders in your main experiment folder. The data must be processed with 
+BiofilmQ to be able to export calculated parameters, so each of the position folders you want to export should 
+contain a "data" folder with the segmentation data. This structure is the native BiofilmQ folder structure that 
+is created when importing multi-position timelapse experiments into BiofilmQ and exporting them into TIF-format, selecting the 
+option to create one folder per position.  
+
 .. _export_mat:
 
 Matlab MAT-files
